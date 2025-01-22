@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp" "CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o" "gcc" "CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o.d"
+  "/home/ahontanb/TFM/secure_gateway/src/sniffer.cpp" "CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o" "gcc" "CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o.d"
   )
 
 # Targets to which this target links.

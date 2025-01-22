@@ -153,6 +153,30 @@ src/secure_gateway.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/secure_gateway.dir/build.make CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.s
 .PHONY : src/secure_gateway.cpp.s
 
+src/sniffer.o: src/sniffer.cpp.o
+.PHONY : src/sniffer.o
+
+# target to build an object file
+src/sniffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/secure_gateway.dir/build.make CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o
+.PHONY : src/sniffer.cpp.o
+
+src/sniffer.i: src/sniffer.cpp.i
+.PHONY : src/sniffer.i
+
+# target to preprocess a source file
+src/sniffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/secure_gateway.dir/build.make CMakeFiles/secure_gateway.dir/src/sniffer.cpp.i
+.PHONY : src/sniffer.cpp.i
+
+src/sniffer.s: src/sniffer.cpp.s
+.PHONY : src/sniffer.s
+
+# target to generate assembly for a file
+src/sniffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/secure_gateway.dir/build.make CMakeFiles/secure_gateway.dir/src/sniffer.cpp.s
+.PHONY : src/sniffer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/secure_gateway.o"
 	@echo "... src/secure_gateway.i"
 	@echo "... src/secure_gateway.s"
+	@echo "... src/sniffer.o"
+	@echo "... src/sniffer.i"
+	@echo "... src/sniffer.s"
 .PHONY : help
 
 

@@ -1,6 +1,8 @@
-CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o: \
- /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o: \
+ /home/ahontanb/TFM/secure_gateway/src/sniffer.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ahontanb/TFM/secure_gateway/src/sniffer.h \
+ /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

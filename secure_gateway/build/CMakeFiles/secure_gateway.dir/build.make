@@ -73,31 +73,47 @@ CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o: CMakeFiles/secure_gatewa
 CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o: ../src/secure_gateway.cpp
 CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o: CMakeFiles/secure_gateway.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahontanb/TFM/secure_gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o -MF CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o.d -o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o -c /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o -MF CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o.d -o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o -c /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp
 
 CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp > CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp > CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.i
 
 CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp -o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahontanb/TFM/secure_gateway/src/secure_gateway.cpp -o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.s
+
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o: CMakeFiles/secure_gateway.dir/flags.make
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o: ../src/sniffer.cpp
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o: CMakeFiles/secure_gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahontanb/TFM/secure_gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o -MF CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o.d -o CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o -c /home/ahontanb/TFM/secure_gateway/src/sniffer.cpp
+
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/secure_gateway.dir/src/sniffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahontanb/TFM/secure_gateway/src/sniffer.cpp > CMakeFiles/secure_gateway.dir/src/sniffer.cpp.i
+
+CMakeFiles/secure_gateway.dir/src/sniffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/secure_gateway.dir/src/sniffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahontanb/TFM/secure_gateway/src/sniffer.cpp -o CMakeFiles/secure_gateway.dir/src/sniffer.cpp.s
 
 # Object files for target secure_gateway
 secure_gateway_OBJECTS = \
-"CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o"
+"CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o" \
+"CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o"
 
 # External object files for target secure_gateway
 secure_gateway_EXTERNAL_OBJECTS =
 
 ../bin/secure_gateway: CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o
+../bin/secure_gateway: CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o
 ../bin/secure_gateway: CMakeFiles/secure_gateway.dir/build.make
 ../bin/secure_gateway: /home/ahontanb/TFM/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a
 ../bin/secure_gateway: /home/ahontanb/TFM/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a
 ../bin/secure_gateway: /home/ahontanb/TFM/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a
 ../bin/secure_gateway: /usr/lib/x86_64-linux-gnu/libpcap.so
 ../bin/secure_gateway: CMakeFiles/secure_gateway.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahontanb/TFM/secure_gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/secure_gateway"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ahontanb/TFM/secure_gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../bin/secure_gateway"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/secure_gateway.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

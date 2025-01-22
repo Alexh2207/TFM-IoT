@@ -1,8 +1,27 @@
 #include <iostream>
 #include <IPv4Layer.h>
+#include <TcpLayer.h>
+#include <UdpLayer.h>
+#include <IcmpLayer.h>
 #include <Packet.h>
 #include <PcapFileDevice.h>
 #include <PcapLiveDeviceList.h>
+
+typedef enum{UDP,TCP,ICMP,UNK}ctrl_prot;
+
+/**
+ * Useful packet information struct
+ */
+
+typedef struct 
+{
+    size_t packet_size;
+    pcpp::IPAddress src_ip;
+    pcpp::IPAddress dst_ip;
+    ctrl_prot control_protocol;
+    int src_port;
+    int dst_port;
+}PacketInfo;
 
 /**
  * A struct for collecting packet statistics
@@ -18,6 +37,7 @@ struct PacketStats
     int httpPacketCount = 0;
     int sslPacketCount = 0;
 
+    std::vector<PacketInfo> packets;
 
     /**
      * Clear all stats
@@ -55,6 +75,18 @@ struct PacketStats
      */
     void printToConsole()
     {
+
+        for(auto i:packets)
+        {
+            std::cout << "------------------" << std::endl
+                << "Total data length: " << i.packet_size << std::endl
+                << "Source IP: " << i.src_ip << std::endl
+                << "Source port: " << i.src_port << std::endl
+                << "Destiny IP: " << i.dst_ip << std::endl
+                << "Destiny port: " << i.dst_port << std::endl
+                << "Packet type: " << i.control_protocol << std::endl
+                << "----------------" << std::endl;
+        }
         std::cout
             << "Ethernet packet count: " << ethPacketCount << std::endl
             << "IPv4 packet count:     " << ipv4PacketCount << std::endl
@@ -67,7 +99,6 @@ struct PacketStats
     }
 };
 
-
 static bool onPacketArrivesBlockingMode(pcpp::RawPacket* packet, pcpp::PcapLiveDevice* dev, void* cookie);
 
 
@@ -76,7 +107,7 @@ int main(int argc, char* argv[])
     std::cout << "This is a test program for capturing traffic at the network level" << std::endl;
 
     // IPv4 address of the interface we want to sniff
-    std::string interfaceIPAddr = "192.168.13.68";
+    std::string interfaceIPAddr = "192.168.1.20";
 
     // find the interface by IP address
     auto* dev = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByIp(interfaceIPAddr);
@@ -136,7 +167,56 @@ static bool onPacketArrivesBlockingMode(pcpp::RawPacket* packet, pcpp::PcapLiveD
     // parsed the raw packet
     pcpp::Packet parsedPacket(packet);
 
-    // collect stats from packet
+    auto* ipLayer = parsedPacket.getLayerOfType<pcpp::IPv4Layer>();
+
+    if (ipLayer == nullptr)
+    {
+        std::cerr << "Something went wrong, couldn't find IPv4 layer" << std::endl;
+        return false;
+    }
+
+    PacketInfo info;
+
+    info.packet_size = ipLayer->getDataLen();
+
+    info.dst_ip = ipLayer->getDstIPAddress();
+
+    std::cout << ipLayer->getDstIPAddress() << std::endl;
+    info.src_ip = ipLayer->getSrcIPAddress();
+
+    auto* controlLayer = ipLayer->getNextLayer();
+
+    switch (controlLayer->getProtocol())
+    {
+    case pcpp::TCP:
+        {
+            info.control_protocol = TCP;
+            auto* tcpLayer = parsedPacket.getLayerOfType<pcpp::TcpLayer>();
+            info.dst_port = tcpLayer->getDstPort();
+            info.src_port = tcpLayer->getSrcPort();
+        }
+        break;
+
+    case pcpp::UDP:
+        {
+            info.control_protocol = UDP;
+            auto* udpLayer = parsedPacket.getLayerOfType<pcpp::UdpLayer>();
+            info.dst_port = udpLayer->getDstPort();
+            info.src_port = udpLayer->getSrcPort();
+        }
+        break;
+
+    case pcpp::ICMP:
+        info.control_protocol = ICMP;
+        break;
+    
+    default:
+        info.control_protocol = UNK;
+        break;
+    }
+
+    stats->packets.push_back(info);
+
     stats->consumePacket(parsedPacket);
 
     // return false means we don't want to stop capturing after this callback

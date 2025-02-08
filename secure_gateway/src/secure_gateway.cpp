@@ -6,6 +6,11 @@
 #include <Packet.h>
 #include <PcapFileDevice.h>
 #include <PcapLiveDeviceList.h>
+#include "sniffer.h"
+#include <thread>
+#include <chrono>
+
+#define MODULE 1
 
 typedef enum{UDP,TCP,ICMP,UNK}ctrl_prot;
 
@@ -104,56 +109,71 @@ static bool onPacketArrivesBlockingMode(pcpp::RawPacket* packet, pcpp::PcapLiveD
 
 int main(int argc, char* argv[])
 {
-    std::cout << "This is a test program for capturing traffic at the network level" << std::endl;
+    if(MODULE == 0){
+        std::cout << "This is a test program for capturing traffic at the network level" << std::endl;
 
-    // IPv4 address of the interface we want to sniff
-    std::string interfaceIPAddr = "192.168.1.20";
+        // IPv4 address of the interface we want to sniff
+        std::string interfaceIPAddr = "192.168.1.20";
 
-    // find the interface by IP address
-    auto* dev = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByIp(interfaceIPAddr);
-    if (dev == nullptr)
-    {
-        std::cerr << "Cannot find interface with IPv4 address of '" << interfaceIPAddr << "'" << std::endl;
-        return 1;
+        // find the interface by IP address
+        auto* dev = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByIp(interfaceIPAddr);
+        if (dev == nullptr)
+        {
+            std::cerr << "Cannot find interface with IPv4 address of '" << interfaceIPAddr << "'" << std::endl;
+            return 1;
+        }
+        // before capturing packets let's print some info about this interface
+        std::cout
+            << "Interface info:" << std::endl
+            << "   Interface name:        " << dev->getName() << std::endl // get interface name
+            << "   Interface description: " << dev->getDesc() << std::endl // get interface description
+            << "   MAC address:           " << dev->getMacAddress() << std::endl // get interface MAC address
+            << "   Default gateway:       " << dev->getDefaultGateway() << std::endl // get default gateway
+            << "   Interface MTU:         " << dev->getMtu() << std::endl; // get interface MTU
+
+        if (!dev->getDnsServers().empty())
+        {
+            std::cout << "   DNS server:            " << dev->getDnsServers().front() << std::endl;
+        }
+
+        // open the device before start capturing/sending packets
+        if (!dev->open())
+        {
+            std::cerr << "Cannot open device" << std::endl;
+            return 1;
+        }
+
+        PacketStats stats;
+
+        std::cout << std::endl << "Starting capture in blocking mode..." << std::endl;
+
+        // clear stats
+        stats.clear();
+
+        // start capturing in blocking mode. Give a callback function to call to whenever a packet is captured, the stats object as the cookie and a 10 seconds timeout
+        dev->startCaptureBlockingMode(onPacketArrivesBlockingMode, &stats, 5);
+
+        // thread is blocked until capture is finished
+
+        // capture is finished, print results
+        std::cout << "Results:" << std::endl;
+        stats.printToConsole();
+
+        return 0;
+    }else{
+        Sniffer sniff = Sniffer("192.168.35.68");
+
+        int check = sniff.start();
+        if(check == 1){
+            return 1;
+        }
+
+        std::this_thread::sleep_for(std::chrono::seconds(5));
+
+        sniff.stop();
+
+        return 0;
     }
-    // before capturing packets let's print some info about this interface
-    std::cout
-        << "Interface info:" << std::endl
-        << "   Interface name:        " << dev->getName() << std::endl // get interface name
-        << "   Interface description: " << dev->getDesc() << std::endl // get interface description
-        << "   MAC address:           " << dev->getMacAddress() << std::endl // get interface MAC address
-        << "   Default gateway:       " << dev->getDefaultGateway() << std::endl // get default gateway
-        << "   Interface MTU:         " << dev->getMtu() << std::endl; // get interface MTU
-
-    if (!dev->getDnsServers().empty())
-    {
-        std::cout << "   DNS server:            " << dev->getDnsServers().front() << std::endl;
-    }
-
-    // open the device before start capturing/sending packets
-    if (!dev->open())
-    {
-        std::cerr << "Cannot open device" << std::endl;
-        return 1;
-    }
-
-    PacketStats stats;
-
-    std::cout << std::endl << "Starting capture in blocking mode..." << std::endl;
-
-    // clear stats
-    stats.clear();
-
-    // start capturing in blocking mode. Give a callback function to call to whenever a packet is captured, the stats object as the cookie and a 10 seconds timeout
-    dev->startCaptureBlockingMode(onPacketArrivesBlockingMode, &stats, 5);
-
-    // thread is blocked until capture is finished
-
-    // capture is finished, print results
-    std::cout << "Results:" << std::endl;
-    stats.printToConsole();
-
-	return 0;
 }
 
 /**

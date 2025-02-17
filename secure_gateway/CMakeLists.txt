@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 # popen()/pclose() are not C++ standards
 set(CMAKE_CXX_EXTENSIONS ON)
 
-set(PcapPlusPlus_ROOT /home/ahontanb/TFM/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/ CACHE PATH "")
+set(PcapPlusPlus_ROOT /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/ CACHE PATH "")
 
 find_package(PcapPlusPlus REQUIRED)
 

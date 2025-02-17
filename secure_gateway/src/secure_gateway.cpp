@@ -12,6 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <unistd.h>
 
 #define MODULE 0
 
@@ -19,18 +20,10 @@
 int main(int argc, char* argv[])
 {
     if(MODULE == 0){
-        std::string route_text;
-        std::ifstream RouteFile("/proc/net/route");
-        while (getline(RouteFile,route_text)){
-            std::string delimiter = "\t";
-            std::string segment;
-            std::vector<std::string> route_info;
-            std::stringstream ss (route_text);
-            while(getline(ss,segment,'\t')){
 
-            }
+        char* argument_list[] = {"iptables","-L",NULL};
 
-        }
+        execvp("/usr/sbin/iptables",argument_list);
         
     }else{
 

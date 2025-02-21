@@ -1,20 +1,5 @@
 # ninja log v5
-1	665	1739815698060648999	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-1	817	1739815698212704958	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	b220ba2e956ff850
-817	990	1739815698384768280	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	618	1739816281172961479	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-618	801	1739816281352959845	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	538	1739816512494780122	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-538	713	1739816512666773837	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	606	1739816567908699135	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-606	780	1739816568080692526	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-3	650	1739817009732733976	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-650	840	1739817009920733638	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	614	1739817176163267033	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-615	829	1739817176375263967	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	618	1739817204150842452	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-618	794	1739817204326839656	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	642	1739817396055095080	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-642	834	1739817396247090781	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
-2	615	1739817698127609479	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
-615	805	1739817698315604515	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	e274f4e7c2201c2
+831	1043	1740076083148195709	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	55463459a7228c5
+2	301	1740075901012751430	CMakeFiles/secure_gateway.dir/src/filter.cpp.o	bd36a5726f57775b
+3	831	1740076082940187070	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
+2	711	1740072368292562188	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	b220ba2e956ff850

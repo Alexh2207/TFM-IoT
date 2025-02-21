@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/alexhonta/TFM/TFM-IoT/build",
+  "command": "/usr/bin/g++ -isystem /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus -g -std=gnu++11 -o CMakeFiles/secure_gateway.dir/src/filter.cpp.o -c /home/alexhonta/TFM/TFM-IoT/secure_gateway/src/filter.cpp",
+  "file": "/home/alexhonta/TFM/TFM-IoT/secure_gateway/src/filter.cpp",
+  "output": "CMakeFiles/secure_gateway.dir/src/filter.cpp.o"
+},
+{
+  "directory": "/home/alexhonta/TFM/TFM-IoT/build",
   "command": "/usr/bin/g++ -isystem /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus -g -std=gnu++11 -o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o -c /home/alexhonta/TFM/TFM-IoT/secure_gateway/src/secure_gateway.cpp",
   "file": "/home/alexhonta/TFM/TFM-IoT/secure_gateway/src/secure_gateway.cpp",
   "output": "CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o"

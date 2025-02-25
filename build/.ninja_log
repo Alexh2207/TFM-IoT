@@ -1,5 +1,5 @@
 # ninja log v5
-831	1043	1740076083148195709	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	55463459a7228c5
 2	301	1740075901012751430	CMakeFiles/secure_gateway.dir/src/filter.cpp.o	bd36a5726f57775b
-3	831	1740076082940187070	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
+796	1077	1740398245368846034	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	55463459a7228c5
 2	711	1740072368292562188	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	b220ba2e956ff850
+3	796	1740398245088841114	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750

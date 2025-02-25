@@ -18,7 +18,7 @@
 #include <PcapFileDevice.h>
 #include <PcapLiveDeviceList.h>
 
-#define MODULE 0
+#define MODULE 1
 
 #define CHAIN "INPUT"
 

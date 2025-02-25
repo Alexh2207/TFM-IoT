@@ -34,7 +34,6 @@ int Filter::add_iptables_rule(std::string src_ip, std::string dst_ip, std::strin
         }
     }else{
         waitpid(pid, &status,0);
-        std::cout << "Master continues" << std::endl;
     }
 
     return status;
@@ -62,7 +61,6 @@ int Filter::delete_iptables_rule(std::string src_ip, std::string dst_ip, std::st
         }
     }else{
         waitpid(pid, &status,0);
-        std::cout << "Master continues" << std::endl;
     }
 
     return status;

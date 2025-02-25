@@ -8,7 +8,7 @@ Filter::Filter(){
     chain = "FORWARD";
 }
 
-Filter::Filter(char* chain){
+Filter::Filter(char* chain){ 
     this->chain = chain;
 }
 

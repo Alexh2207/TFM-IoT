@@ -3,3 +3,7 @@
 2	301	1740075901012751430	CMakeFiles/secure_gateway.dir/src/filter.cpp.o	bd36a5726f57775b
 3	796	1740398245088841114	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
 2	711	1740072368292562188	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	b220ba2e956ff850
+1	297	1740509683338998778	CMakeFiles/secure_gateway.dir/src/filter.cpp.o	bd36a5726f57775b
+2	704	1740509683745989584	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	e270f20324c1c750
+2	803	1740509683842987393	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	b220ba2e956ff850
+803	993	1740509684031983125	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	55463459a7228c5

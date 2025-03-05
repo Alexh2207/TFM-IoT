@@ -56,6 +56,13 @@ build CMakeFiles/secure_gateway.dir/src/filter.cpp.o: CXX_COMPILER__secure_gatew
   OBJECT_DIR = CMakeFiles/secure_gateway.dir
   OBJECT_FILE_DIR = CMakeFiles/secure_gateway.dir/src
 
+build CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o: CXX_COMPILER__secure_gateway_unscanned_Debug /home/alexhonta/TFM/TFM-IoT/secure_gateway/src/mqtt_client.cpp || cmake_object_order_depends_target_secure_gateway
+  DEP_FILE = CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -isystem /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus
+  OBJECT_DIR = CMakeFiles/secure_gateway.dir
+  OBJECT_FILE_DIR = CMakeFiles/secure_gateway.dir/src
+
 build CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o: CXX_COMPILER__secure_gateway_unscanned_Debug /home/alexhonta/TFM/TFM-IoT/secure_gateway/src/secure_gateway.cpp || cmake_object_order_depends_target_secure_gateway
   DEP_FILE = CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o.d
   FLAGS = -g -std=gnu++11
@@ -78,7 +85,7 @@ build CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o: CXX_COMPILER__secure_gate
 #############################################
 # Link the executable /home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway
 
-build /home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway: CXX_EXECUTABLE_LINKER__secure_gateway_Debug CMakeFiles/secure_gateway.dir/src/filter.cpp.o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o | /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so
+build /home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway: CXX_EXECUTABLE_LINKER__secure_gateway_Debug CMakeFiles/secure_gateway.dir/src/filter.cpp.o CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o | /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so
   FLAGS = -g
   LINK_LIBRARIES = /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a  /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a  /home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a  /usr/lib/x86_64-linux-gnu/libpcap.so
   OBJECT_DIR = CMakeFiles/secure_gateway.dir

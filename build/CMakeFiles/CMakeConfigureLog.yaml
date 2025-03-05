@@ -969,3 +969,108 @@ events:
         1.10.1 (with TPACKET_V3)
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/FindPCAP.cmake:113 (try_run)"
+      - "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/PcapPlusPlusConfig.cmake:49 (find_dependency)"
+      - "CMakeLists.txt:11 (find_package)"
+    directories:
+      source: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+      binary: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/modules;/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: /home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/alexhonta/.local/bin/ninja -v cmTC_73618 && [1/2] /usr/bin/gcc    -o CMakeFiles/cmTC_73618.dir/detect_pcap_version.c.o -c /home/alexhonta/TFM/TFM-IoT/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/gcc   CMakeFiles/cmTC_73618.dir/detect_pcap_version.c.o -o cmTC_73618  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.1 (with TPACKET_V3)
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/FindPCAP.cmake:113 (try_run)"
+      - "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/PcapPlusPlusConfig.cmake:49 (find_dependency)"
+      - "CMakeLists.txt:11 (find_package)"
+    directories:
+      source: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+      binary: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/modules;/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: /home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/alexhonta/.local/bin/ninja -v cmTC_b8de3 && [1/2] /usr/bin/gcc    -o CMakeFiles/cmTC_b8de3.dir/detect_pcap_version.c.o -c /home/alexhonta/TFM/TFM-IoT/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/gcc   CMakeFiles/cmTC_b8de3.dir/detect_pcap_version.c.o -o cmTC_b8de3  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.1 (with TPACKET_V3)
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/FindPCAP.cmake:113 (try_run)"
+      - "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/PcapPlusPlusConfig.cmake:49 (find_dependency)"
+      - "CMakeLists.txt:11 (find_package)"
+    directories:
+      source: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+      binary: "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/modules;/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: /home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/alexhonta/.local/bin/ninja -v cmTC_3cd66 && [1/2] /usr/bin/gcc    -o CMakeFiles/cmTC_3cd66.dir/detect_pcap_version.c.o -c /home/alexhonta/TFM/TFM-IoT/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/gcc   CMakeFiles/cmTC_3cd66.dir/detect_pcap_version.c.o -o cmTC_3cd66  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.1 (with TPACKET_V3)
+      exitCode: 0
+...

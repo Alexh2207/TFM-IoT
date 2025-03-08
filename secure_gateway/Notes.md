@@ -34,3 +34,7 @@ curl -v -X GET http://localhost:8080/api/plugins/telemetry/DEVICE/<device_id>/ke
 Get time-series data for key
 
 curl -v -X GET http://localhost:8080/api/plugins/telemetry/DEVICE/<device_id>/values/timeseries?keys=<keys> --header "Content-Type:application/json" --header "X-Authorization: Bearer $JWTToken"
+
+RPC: 
+
+mosquitto_sub -d -q 1 -h localhost -p 1883 -t v1/devices/me/rpc/request/+ -i "1234" -u "tfmtest" -P "tfmtest"

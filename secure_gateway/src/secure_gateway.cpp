@@ -17,47 +17,64 @@
 #include <Packet.h>
 #include <PcapFileDevice.h>
 #include <PcapLiveDeviceList.h>
+#include <mqtt/async_client.h>
 
-#define MODULE 1
+//Time variables defined for MQTT
+#define TIMEOUT 2
+#define KEEPALIVE 500
 
-#define CHAIN "INPUT"
+#define MODULE 0
 
-#define ACCEPT "ACCEPT"
+mqtt::async_client* client;
 
-
-int add_iptables_rule(std::string src_ip, std::string dst_ip, std::string proto, int src_port, int dst_port, char* action);
-int delete_iptables_rule(std::string src_ip, std::string dst_ip, std::string proto, int src_port, int dst_port, char* action);
-
+void message_callback(mqtt::const_message_ptr msg);
 
 int main(int argc, char* argv[])
 {
     if(MODULE == 0){
 
-        int result = add_iptables_rule("10.0.0.1","10.0.0.1", "cp",80,80, ACCEPT);
+        std::string address = "127.0.0.1",device_id = "1234",
+        client_name = "tfmtest";
 
-        std::cout << result << std::endl;
+        client = new mqtt::async_client(address, device_id);
 
-        char* argument_list_L[] = {"iptables","-L",NULL};
+        auto conOps = mqtt::connect_options_builder().user_name(client_name).password("tfmtest").connect_timeout(
+                        std::chrono::seconds(TIMEOUT)).keep_alive_interval(
+                        std::chrono::milliseconds(KEEPALIVE)).clean_session(true).finalize();
 
-        result = delete_iptables_rule("10.0.0.1","10.0.0.1", "tcp",80,80, ACCEPT);
+        client->set_message_callback(message_callback);
 
-        std::cout << result << std::endl;
+        if (client->connect(conOps)->wait_for(1000)) {
+            std::cout << "Connected Successfully" << std::endl;
+        } else {
+            std::cerr << "Error in connection" << std::endl;
+        }
+
+        client->subscribe("v1/devices/me/rpc/request/+", 1);
+
+        sleep(30);
+
+        client->disconnect();
+
+        delete client;
         
     }else{
 
-        Filter filter = Filter("INPUT");
 
-        int result = filter.add_iptables_rule("10.0.0.1","10.0.0.1", "tcp",80,80, ACCEPT);
-
-        std::cout << result << std::endl;
-
-        sleep(10);
-
-        result = filter.delete_iptables_rule("10.0.0.1","10.0.0.1", "tcp",80,80, ACCEPT);
-
-        std::cout << result << std::endl;
 
     }
 
     return 0;
+}
+
+void message_callback(mqtt::const_message_ptr msg) {
+	std::cout << "MSG_RECEIVED: " << msg->get_payload_str() << std::endl;
+    std::cout << "RPC_ID: " << (msg->get_topic()).substr(26) << std::endl;
+
+    if(msg->get_topic().find("request")>=0)
+    {
+        mqtt::message_ptr msg2 = mqtt::make_message("v1/devices/me/rpc/response/"+(msg->get_topic()).substr(26),"{\"changed\":true}");
+        client->publish(msg2);
+
+    }
 }

@@ -1,24 +1,34 @@
 
-#ifndef __FILTER__
-#define __FILTER__
+#ifndef __MQTT__
+#define __MQTT__
 
 
 #include <iostream>
+#include "thread_queue.h"
+#include "sniffer.h"
+#include "filter.h"
+#include <mqtt/async_client.h>
 
 class MQTT_client{
 
     private:
 
-    char* chain;
+    std::string device_id;
+
+    std::string client_id;
+
+    std::string username;
+
+    std::string password;
+
+    std::string address;
 
     public:
 
-    static const char* ACCEPT;
-    static const char* DROP;
+    Thread_queue<Sniffer::PacketInfo> packet_q;
+    Thread_queue<Filter::rule> rules_q;
 
-    MQTT_client();
-
-    MQTT_client(char* chain);
+    MQTT_client(std::string device_id, std::string client_id, std::string username,std::string password, std::string address);
 
 
     ~MQTT_client();

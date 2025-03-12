@@ -65,11 +65,16 @@
 			"cinttypes": "cpp",
 			"typeinfo": "cpp",
 			"condition_variable": "cpp",
-			"mutex": "cpp"
+			"mutex": "cpp",
+			"variant": "cpp"
 		},
 		"cmake.debugConfig": {
-			"miDebuggerPath": "./gdb",
+			"miDebuggerPath": "/home/alexhonta/TFM/TFM-IoT/gdb",
 			"MIMode": "gdb"
 		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
 	}
 }

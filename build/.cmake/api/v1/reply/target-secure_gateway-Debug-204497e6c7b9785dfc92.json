@@ -32,13 +32,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 20,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
@@ -116,6 +116,11 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/usr/include/jsoncpp"
 				}
 			],
 			"language" : "CXX",
@@ -123,7 +128,31 @@
 			{
 				"backtraces" : 
 				[
-					1
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2
 				],
 				"standard" : "17"
 			},
@@ -161,6 +190,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libpaho-mqttpp3.so.1.5.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.9.5",
 				"role" : "libraries"
 			},
 			{

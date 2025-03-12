@@ -22,16 +22,15 @@ class Filter{
         std::string proto;
         int src_port;
         int dst_port;
-        char* action;
+        std::string action;
+        int add;
     } rule;
 
     Filter();
 
     Filter(char* chain);
 
-    int add_iptables_rule(Filter::rule rule);
-
-    int delete_iptables_rule(Filter::rule rule);
+    int manage_iptables_rule(Filter::rule rule);
 
     ~Filter();
 

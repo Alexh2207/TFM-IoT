@@ -12,6 +12,7 @@ list(APPEND CMAKE_MODULE_PATH "/usr/local/lib/cmake/")
 
 find_package(PcapPlusPlus REQUIRED)
 find_package(PahoMqttCpp REQUIRED)
+find_package(jsoncpp REQUIRED)
 find_package(OpenSSL)
 
 FILE(GLOB Sources src/*.cpp)
@@ -21,4 +22,4 @@ add_executable(secure_gateway ${Sources})
 
 set_target_properties("${PROJECT_NAME}" PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
-target_link_libraries("${PROJECT_NAME}" PUBLIC PcapPlusPlus::Pcap++ PahoMqttCpp::paho-mqttpp3)
+target_link_libraries("${PROJECT_NAME}" PUBLIC PcapPlusPlus::Pcap++ PahoMqttCpp::paho-mqttpp3 jsoncpp_lib)

@@ -240,6 +240,9 @@ PcapPlusPlus_DIR:PATH=/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pca
 
 PcapPlusPlus_ROOT:PATH=/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64
 
+//The directory containing a CMake configuration file for jsoncpp.
+jsoncpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/jsoncpp
+
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
 

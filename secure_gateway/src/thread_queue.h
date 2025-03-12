@@ -74,9 +74,11 @@ public:
 	*
 	* @param[in] timeout timeout in milliseconds.
 	*
-	* @return Element of type T.
+	* @param[out] result element.
+	*
+	* @return 0 if successfull, -1 if reached timeout.
 	*/
-    T pop(int timeout)
+    int pop(int timeout, T* result)
     {
 
     	// acquire lock
@@ -88,14 +90,14 @@ public:
     	// retrieve item
     	T item;
     	if(element){
-    		item = m_queue.front();
+    		*result = m_queue.front();
     		m_queue.pop();
     	}else{
     		return -1;
     	}
 
     	// return item
-    	return item;
+    	return 0;
     }
 
 	/**

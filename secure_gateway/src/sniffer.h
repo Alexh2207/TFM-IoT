@@ -11,6 +11,7 @@
 #include <Packet.h>
 #include <PcapFileDevice.h>
 #include <PcapLiveDeviceList.h>
+#include "thread_queue.h"
 
 class Sniffer{
 
@@ -49,6 +50,8 @@ class Sniffer{
     private:
     
     std::vector<PacketInfo> packets;
+
+    Thread_queue<PacketInfo> processed_packet_q;
 
 };
 

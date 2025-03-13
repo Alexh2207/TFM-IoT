@@ -29,3 +29,10 @@
 2822	3189	1741820523228521217	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4
 3	2688	1741820639183707257	CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o	acfb916205a2c3b3
 2688	3069	1741820639566711111	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4
+5	1372	1741885318723578386	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	95d059303b4280f
+4	2565	1741885319916591489	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	fdea31efd489e47a
+3	3030	1741885320380596585	CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o	acfb916205a2c3b3
+3030	3387	1741885320737600506	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4
+3	2202	1741885646766176131	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	fdea31efd489e47a
+3	2717	1741885647280181762	CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o	acfb916205a2c3b3
+2717	3071	1741885647633185629	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4

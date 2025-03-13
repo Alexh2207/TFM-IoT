@@ -65,14 +65,25 @@ void MQTT_client::enable_telemetry(){
 
 void MQTT_client::telemetry_sender() {
 
+    Json::Value telemetry;
+    Json::FastWriter writer;
+    std::string message;
+
     while(telemetry_enabled){
         Sniffer::PacketInfo packet;
         
         if(packet_q.pop(200,&packet) >= 0){
-            std::cout << "This is a simple test to see if I can extract information this way" << std::endl;
-            std::cout << packet.dst_ip << std::endl;
-        } else {
-            std::cout << "Try fucking again" << std::endl;
+
+            telemetry["size"] = packet.packet_size;
+            telemetry["src_ip"] = packet.src_ip.toString();
+            telemetry["dst_ip"] = packet.dst_ip.toString();
+            telemetry["src_port"] = packet.src_port;
+            telemetry["dst_port"] = packet.dst_port;
+            telemetry["proto"] = packet.control_protocol;
+
+            message = writer.write(telemetry);
+
+            this->client->publish("v1/devices/me/telemetry",message);
         }
         
         
@@ -122,6 +133,9 @@ void MQTT_client::RPC_received_callback(mqtt::const_message_ptr msg) {
 }
 
 MQTT_client::~MQTT_client(){
+
+    disable_RPC();
+    disable_telemetry();
 
     telemetry_processor.join();
     if(this->client->is_connected())

@@ -70,9 +70,6 @@ int main(int argc, char* argv[])
         cliente1.packet_q.push({100,pcpp::IPAddress("10.0.0.1"),pcpp::IPAddress("10.0.0.1"),Sniffer::ctrl_prot::TCP,80,80});
 
         sleep(2);
-
-        cliente1.disable_telemetry();
-
     }
 
     return 0;

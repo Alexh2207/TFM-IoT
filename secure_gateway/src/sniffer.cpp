@@ -12,7 +12,7 @@ Sniffer::Sniffer(std::string IPAddresses){
 
 static void onPacketArrives(pcpp::RawPacket* packet, pcpp::PcapLiveDevice* dev, void* cookie){
     
-    auto* stats = static_cast<std::vector<Sniffer::PacketInfo>*>(cookie);
+    auto* stats = static_cast<Thread_queue<Sniffer::PacketInfo>*>(cookie);
 
     // parsed the raw packet
     pcpp::Packet parsedPacket(packet);
@@ -64,7 +64,7 @@ static void onPacketArrives(pcpp::RawPacket* packet, pcpp::PcapLiveDevice* dev, 
             break;
         }
 
-        stats->push_back(info);
+        stats->push(info);
     }
 }
 
@@ -75,7 +75,7 @@ int Sniffer::start(){
         return 1;
     }
 
-    dev->startCapture(onPacketArrives, &packets);
+    dev->startCapture(onPacketArrives, &processed_packet_q);
 
     return 0;
 }

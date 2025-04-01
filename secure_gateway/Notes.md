@@ -55,3 +55,30 @@ JSON rule example:
 curl -v -X POST -d @add_rule.json http://localhost:8080/api/plugins/rpc/twoway/87276620-f3ae-11ef-96bc-579b3f6f0edd --header "Content-Type:application/json" --header "X-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4aG9udGFuaWxsYUBnbWFpbC5jb20iLCJ1c2VySWQiOiJkZDZiYTIxMC1mOWZmLTExZWYtOTU5MS1iYjRmNGZiZTQ4MDUiLCJzY29wZXMiOlsiVEVOQU5UX0FETUlOIl0sInNlc3Npb25JZCI6IjdkODg0ODJjLTc3YzMtNDZlOS04MzNjLWU1NzY0MTc5ZGQwNyIsImV4cCI6MTc0MTgyNTYwOSwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE3NDE4MTY2MDksImVuYWJsZWQiOnRydWUsImlzUHVibGljIjpmYWxzZSwidGVuYW50SWQiOiI3MDEyYjI2MC1mM2FkLTExZWYtOTZiYy01NzliM2Y2ZjBlZGQiLCJjdXN0b21lcklkIjoiMTM4MTQwMDAtMWRkMi0xMWIyLTgwODAtODA4MDgwODA4MDgwIn0.SWD-SNw79ApgEqMzbQFrA29Vy-YYf8_eHYM-pHIiT86z32lnDp3ghjYdTNmFKuJnoPb-sm1ywdKj7nTdnQLP0A"
 
 Quiero cambiar las reglas a un atributo que tenga un array de objetos de reglas... Tengo que definirlo en la Web, así que ya me puedo poner con ello.
+rule_array
+
+return '# Some title\n - Entity name: ' + data[0]['entityName'] + '\n - Value: ' + data[0]['rule_array'];
+
+### Markdown/HTML card
+ - **Current entity**: ${entityName}.
+ - **Current value**: ${rule_array}.
+
+
+
+|Title|Value|
+|-----|-----|
+|Head |lens |
+
+{"rules":[{"src_ip":"10.0.0.1","dst_ip":"10.0.0.1","proto":"tcp","src_port":80,"dst_port":80,"action":"ACCEPT"},{"src_ip":"0.0.0.0","dst_ip":"0.0.0.0","proto":"any","src_port":0,"dst_port":0,"action":"ACCEPT"}]}
+
+
+Nueva RPC para eliminar reglas:
+
+{
+    "method": "delete_ruleID",
+    "params": {
+        "ruleID": 1
+    }
+}
+
+Fuerza a tener un mapa en el main para identificar la regla o un campo en los distintos elementos

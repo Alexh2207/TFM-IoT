@@ -37,6 +37,8 @@ class Sniffer{
         int dst_port;
     }PacketInfo;
 
+    Thread_queue<PacketInfo> processed_packet_q;
+
     Sniffer();
 
     Sniffer(std::string IPAddresses);
@@ -50,8 +52,6 @@ class Sniffer{
     private:
     
     std::vector<PacketInfo> packets;
-
-    Thread_queue<PacketInfo> processed_packet_q;
 
 };
 

@@ -1,7 +1,7 @@
 # ninja log v5
-2935	3356	1742664906219839753	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4
+2725	3376	1743553506516411906	/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway	5a6f17326cb514c4
 2	615	1742664903480836477	CMakeFiles/secure_gateway.dir/src/filter.cpp.o	17a8925da5a0b68
-3	1338	1742664904203837331	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	95d059303b4280f
-2	2935	1742664905798839243	CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o	acfb916205a2c3b3
-3	2334	1742664905198838519	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	fdea31efd489e47a
+3	1261	1743550419193728958	CMakeFiles/secure_gateway.dir/src/sniffer.cpp.o	95d059303b4280f
+11	2969	1743550306391566422	CMakeFiles/secure_gateway.dir/src/mqtt_client.cpp.o	acfb916205a2c3b3
+5	2724	1743553505866404428	CMakeFiles/secure_gateway.dir/src/secure_gateway.cpp.o	fdea31efd489e47a
 1	47	0	clean	7fdacf21d2a9e5f

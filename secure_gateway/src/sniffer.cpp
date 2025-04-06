@@ -30,7 +30,7 @@ static void onPacketArrives(pcpp::RawPacket* packet, pcpp::PcapLiveDevice* dev, 
 
         info.dst_ip = ipLayer->getDstIPAddress();
 
-        std::cout << ipLayer->getDstIPAddress() << std::endl;
+        //std::cout << ipLayer->getDstIPAddress() << std::endl;
         info.src_ip = ipLayer->getSrcIPAddress();
 
         auto* controlLayer = ipLayer->getNextLayer();

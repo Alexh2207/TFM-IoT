@@ -82,3 +82,7 @@ Nueva RPC para eliminar reglas:
 }
 
 Fuerza a tener un mapa en el main para identificar la regla o un campo en los distintos elementos
+
+Para cambiar atributo de cliente:
+{"rule_array_client":{"rules":[{"ruleID":1,"src_ip":"10.0.0.1","dst_ip":"10.0.0.1","proto":"tcp","src_port":80,"dst_port":80,"action":"ACCEPT"},{"ruleID":2,"src_ip":"0.0.0.0","dst_ip":"0.0.0.0","proto":"any","src_port":0,"dst_port":0,"action":"ACCEPT"}]}}
+

@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "secure_gateway::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-secure_gateway-Debug-204497e6c7b9785dfc92.json",
+					"jsonFile" : "target-secure_gateway-Debug-8dfff873b471a34fb065.json",
 					"name" : "secure_gateway",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/alexhonta/TFM/TFM-IoT/build",
-		"source" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway"
+		"build" : "/home/ahontanb/TFM/build",
+		"source" : "/home/ahontanb/TFM/secure_gateway"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 3
 	}
 }

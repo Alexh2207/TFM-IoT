@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/build"
+			"value" : "/home/ahontanb/TFM/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "26"
+			"value" : "22"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,23 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3"
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_COLOR_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable color output during build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -103,7 +119,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/bin/cmake"
+			"value" : "/usr/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +131,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/bin/cpack"
+			"value" : "/usr/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +143,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/bin/ctest"
+			"value" : "/usr/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -518,18 +534,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake."
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/build/CMakeFiles/pkgRedirects"
-		},
-		{
 			"name" : "CMAKE_GENERATOR",
 			"properties" : 
 			[
@@ -539,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Ninja"
+			"value" : "Unix Makefiles"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -590,6 +594,18 @@
 			"value" : "1"
 		},
 		{
+			"name" : "CMAKE_HAVE_PTHREAD_H",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have include pthread.h"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
 			"name" : "CMAKE_HOME_DIRECTORY",
 			"properties" : 
 			[
@@ -599,7 +615,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway"
+			"value" : "/home/ahontanb/TFM/secure_gateway"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -651,11 +667,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Program used to build from build.ninja files."
+					"value" : "Path to a program."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/alexhonta/.local/bin/ninja"
+			"value" : "/usr/bin/gmake"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -887,7 +903,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/alexhonta/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.26"
+			"value" : "/usr/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1334,18 +1350,6 @@
 			"value" : "/usr/bin/pkg-config"
 		},
 		{
-			"name" : "PahoMqttC_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for PahoMqttC."
-				}
-			],
-			"type" : "PATH",
-			"value" : "PahoMqttC_DIR-NOTFOUND"
-		},
-		{
 			"name" : "PahoMqttCpp_DIR",
 			"properties" : 
 			[
@@ -1367,7 +1371,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus"
+			"value" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus"
 		},
 		{
 			"name" : "PcapPlusPlus_ROOT",
@@ -1379,7 +1383,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64"
+			"value" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64"
 		},
 		{
 			"name" : "RUN_RESULT_VAR",
@@ -1387,23 +1391,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Result of try_run()"
+					"value" : "Result of TRY_RUN"
 				}
 			],
 			"type" : "INTERNAL",
 			"value" : "0"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
 		},
 		{
 			"name" : "_OPENSSL_CFLAGS",
@@ -1915,7 +1907,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/build"
+			"value" : "/home/ahontanb/TFM/build"
 		},
 		{
 			"name" : "secure_gateway_IS_TOP_LEVEL",
@@ -1939,7 +1931,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway"
+			"value" : "/home/ahontanb/TFM/secure_gateway"
 		}
 	],
 	"kind" : "cache",

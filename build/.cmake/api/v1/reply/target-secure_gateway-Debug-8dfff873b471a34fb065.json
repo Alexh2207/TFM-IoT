@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/bin/secure_gateway"
+			"path" : "/home/ahontanb/TFM/secure_gateway/bin/secure_gateway"
 		}
 	],
 	"backtrace" : 1,
@@ -11,18 +11,11 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries",
-			"set_target_properties",
-			"include",
-			"find_package"
+			"target_link_libraries"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt",
-			"pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/PcapPlusPlusTargets.cmake",
-			"pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/cmake/pcapplusplus/PcapPlusPlusConfig.cmake",
-			"/usr/local/lib/cmake/PahoMqttCpp/PahoMqttCppTargets.cmake",
-			"/usr/local/lib/cmake/PahoMqttCpp/PahoMqttCppConfig.cmake"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -40,64 +33,6 @@
 				"file" : 0,
 				"line" : 25,
 				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 13,
-				"parent" : 0
-			},
-			{
-				"file" : 2,
-				"parent" : 3
-			},
-			{
-				"command" : 3,
-				"file" : 2,
-				"line" : 53,
-				"parent" : 4
-			},
-			{
-				"file" : 1,
-				"parent" : 5
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 72,
-				"parent" : 6
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 14,
-				"parent" : 0
-			},
-			{
-				"file" : 4,
-				"parent" : 8
-			},
-			{
-				"command" : 3,
-				"file" : 4,
-				"line" : 20,
-				"parent" : 9
-			},
-			{
-				"file" : 3,
-				"parent" : 10
-			},
-			{
-				"command" : 2,
-				"file" : 3,
-				"line" : 77,
-				"parent" : 11
-			},
-			{
-				"command" : 2,
-				"file" : 3,
-				"line" : 69,
-				"parent" : 11
 			}
 		]
 	},
@@ -107,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17"
+					"fragment" : "-g"
 				}
 			],
 			"includes" : 
@@ -115,7 +50,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus"
+					"path" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/include/pcapplusplus"
 				},
 				{
 					"backtrace" : 2,
@@ -184,7 +119,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a",
+				"fragment" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPcap++.a",
 				"role" : "libraries"
 			},
 			{
@@ -198,57 +133,46 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 7,
-				"fragment" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a",
+				"fragment" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libPacket++.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 7,
-				"fragment" : "/home/alexhonta/TFM/TFM-IoT/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a",
+				"fragment" : "/home/ahontanb/TFM/secure_gateway/pcaplusplus/pcapplusplus-24.09-ubuntu-22.04-gcc-11.4.0-x86_64/lib/libCommon++.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 7,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libpcap.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 12,
 				"fragment" : "/usr/local/lib/libpaho-mqtt3as.so.1.3.14",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libssl.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libcrypto.so",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "-lc",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "-ldl",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "-lpthread",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "-lrt",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
 				"fragment" : "-lanl",
 				"role" : "libraries"
 			}

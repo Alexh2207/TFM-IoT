@@ -18,7 +18,7 @@ MQTT_client::MQTT_client(std::string device_id, std::string client_id, std::stri
 }
 
 void MQTT_client::init(){
-    std::string address = "127.0.0.1",device_id = "1234",
+    std::string address = "192.168.1.69",device_id = "1234",
     client_name = "tfmtest";
 
     this->client = new mqtt::async_client(address, device_id);

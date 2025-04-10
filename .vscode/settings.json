@@ -1,6 +1,6 @@
 {
     "makefile.makefilePath": "/home/ahontanb/TFM/make_tests/Makefile",
-    "cmake.sourceDirectory": "/home/alexhonta/TFM/TFM-IoT/secure_gateway",
+    "cmake.sourceDirectory": "/home/ahontanb/TFM/secure_gateway",
     "files.associations": {
         "ostream": "cpp",
         "array": "cpp",

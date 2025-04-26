@@ -21,7 +21,7 @@ static void onPacketArrives(pcpp::RawPacket* packet, pcpp::PcapLiveDevice* dev, 
 
     if (ipLayer == nullptr)
     {
-        std::cerr << "Something went wrong, couldn't find IPv4 layer" << std::endl;
+        //std::cerr << "Something went wrong, couldn't find IPv4 layer" << std::endl;
     }else{
 
         Sniffer::PacketInfo info;

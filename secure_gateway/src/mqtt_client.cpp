@@ -101,35 +101,65 @@ void MQTT_client::RPC_received_callback(mqtt::const_message_ptr msg) {
 	std::cout << "MSG_RECEIVED: " << msg->get_payload_str() << std::endl;
     std::cout << "RPC_ID: " << (msg->get_topic()).substr(26) << std::endl;
 
-    Json::Value root;
 
-    Json::Reader reader;
+    if(msg->get_topic().find("v1/devices/me/rpc/request") != std::string::npos){
 
-    reader.parse(msg->get_payload_str(),root);
+        Json::Value root;
 
-    std::cout << "METHOD: " << root["method"].asString() << std::endl;
-    std::cout << "PROTO: " << root["params"]["proto"].asString() << std::endl;
+        Json::Reader reader;
 
-    int add_rule = 0;
+        reader.parse(msg->get_payload_str(),root);
 
-    if(root["method"].asString() == "rule_add")
-        add_rule = 1;
+        std::cout << "METHOD: " << root["method"].asString() << std::endl;
+        std::cout << "PROTO: " << root["params"]["proto"].asString() << std::endl;
 
-    Filter::rule rule_add = {root["params"]["src_ip"].asString(),root["params"]["dst_ip"].asString(),root["params"]["proto"].asString(),root["params"]["src_port"].asInt(),root["params"]["dst_port"].asInt(),root["params"]["action"].asString(), add_rule};
+        int add_rule = 0;
 
-    this->rule_q.push(rule_add);
+        if(root["method"].asString() == "rule_add")
+            add_rule = 1;
 
-    if(msg->get_topic().find("request")>=0)
-    {
-        if(add_rule){
-            mqtt::message_ptr msg2 = mqtt::make_message("v1/devices/me/rpc/response/"+(msg->get_topic()).substr(26),"{\"added\":true}");
-            client->publish(msg2);
-        }else{
-            mqtt::message_ptr msg2 = mqtt::make_message("v1/devices/me/rpc/response/"+(msg->get_topic()).substr(26),"{\"deleted\":true}");
-            client->publish(msg2);
+        Filter::rule rule_add = {root["params"]["src_ip"].asString(),root["params"]["dst_ip"].asString(),root["params"]["proto"].asString(),root["params"]["src_port"].asInt(),root["params"]["dst_port"].asInt(),root["params"]["action"].asString(), add_rule};
+
+        this->rule_q.push(rule_add);
+
+        if(msg->get_topic().find("request")>=0)
+        {
+            if(add_rule){
+                mqtt::message_ptr msg2 = mqtt::make_message("v1/devices/me/rpc/response/"+(msg->get_topic()).substr(26),"{\"added\":true}");
+                client->publish(msg2);
+            }else{
+                mqtt::message_ptr msg2 = mqtt::make_message("v1/devices/me/rpc/response/"+(msg->get_topic()).substr(26),"{\"deleted\":true}");
+                client->publish(msg2);
+            }
+
         }
-
+    }else if (msg->get_topic().find("v1/devices/me/attributes/response") != std::string::npos){
+        std::cout << "got attribute" << std::endl;
+        this->int_rule_q.push(msg->get_payload_str());
     }
+}
+
+std::map<int,Filter::rule> MQTT_client::get_applied_rules(){
+    this->client->publish("v1/devices/me/attributes/request/1","{\"clientKeys\":\"rule_array_client\"}");
+    std::map<int,Filter::rule> rules;
+
+    std::string json_answer;
+
+    if(this->int_rule_q.pop(2000,&json_answer) != -1){
+        Json::Value root;
+        Json::Reader reader;
+
+        reader.parse(json_answer, root);
+
+        for(Json::Value rule : root["client"]["rule_array_client"]["rules"]){
+
+            std::cout << rule["src_ip"].asString() << std::endl;
+            Filter::rule rule_to_add = {rule["src_ip"].asString(),rule["dst_ip"].asString(),rule["proto"].asString(),rule["src_port"].asInt(),rule["dst_port"].asInt(),rule["action"].asString(), 0};
+            rules.insert({rule["ruleID"].asInt(),rule_to_add});
+        }
+        
+    }
+    return rules;
 }
 
 MQTT_client::~MQTT_client(){

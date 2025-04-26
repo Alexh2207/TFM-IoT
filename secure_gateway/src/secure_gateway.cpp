@@ -38,18 +38,18 @@ int main(int argc, char* argv[])
 
     MQTT_client cliente1 = MQTT_client("1234", "","tfmtest","tfmtest","127.0.0.1");
 
-    Sniffer sniffer1 = Sniffer("192.168.1.20");
+    Sniffer sniffer1 = Sniffer("192.168.56.1");
 
     Filter filter1 = Filter("FORWARD");
 
     cliente1.enable_telemetry();
     cliente1.enable_RPC();
-/*
+
     sniffer1.start();
 
     std::thread telemetry_thread_orch(telemetry_thread_orchestrator,std::ref(cliente1),std::ref(sniffer1));
-*/
-    std::map<int,Filter::rule> rules_applied;
+
+    std::map<int,Filter::rule> rules_applied = cliente1.get_applied_rules();
 
     int rule_index = 0;
 
@@ -58,27 +58,30 @@ int main(int argc, char* argv[])
         Filter::rule rule_received;
         if(cliente1.rule_q.pop(2000,&rule_received) != -1){
 
-        rules_applied[rule_index] = rule_received;
+            rules_applied[rule_index] = rule_received;
 
-        filter1.manage_iptables_rule(rule_received);
+            if(filter1.manage_iptables_rule(rule_received) >= 0){
+                //cliente1.update_applied_rules(rules_applied);
+            }
         }
     }
     
 
-    //sniffer1.stop();
+    sniffer1.stop();
 
-    //telemetry_thread_orch.join();
+    telemetry_thread_orch.join();
 
     return 0;
 }
 
 void telemetry_thread_orchestrator(std::reference_wrapper<MQTT_client> client, std::reference_wrapper<Sniffer> sniffer){
     Sniffer::PacketInfo packet;
-
-    while (sniffer.get().processed_packet_q.pop(2000,&packet) != -1)
-    {
-        std::cout << packet.dst_port << std::endl;
-        client.get().packet_q.push(packet);
+    while(power == 1){
+        if (sniffer.get().processed_packet_q.pop(2000,&packet) != -1)
+        {
+            std::cout << packet.dst_port << std::endl;
+            client.get().packet_q.push(packet);
+        }
     }
     
 }

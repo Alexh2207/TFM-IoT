@@ -38,6 +38,8 @@ class MQTT_client{
 
     void init();
 
+    Thread_queue<std::string> int_rule_q;
+
     public:
 
     Thread_queue<Sniffer::PacketInfo> packet_q;
@@ -52,6 +54,10 @@ class MQTT_client{
     void enable_telemetry();
 
     void disable_telemetry();
+
+    void update_applied_rules(std::map<int,Filter::rule> rules_applied);
+
+    std::map<int,Filter::rule> get_applied_rules();
 
     ~MQTT_client();
 

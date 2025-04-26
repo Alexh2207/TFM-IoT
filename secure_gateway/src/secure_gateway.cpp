@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
             rules_applied[rule_index] = rule_received;
 
             if(filter1.manage_iptables_rule(rule_received) >= 0){
-                //cliente1.update_applied_rules(rules_applied);
+                cliente1.update_applied_rules(rules_applied);
             }
         }
     }

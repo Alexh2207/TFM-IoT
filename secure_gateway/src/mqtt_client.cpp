@@ -162,6 +162,35 @@ std::map<int,Filter::rule> MQTT_client::get_applied_rules(){
     return rules;
 }
 
+void MQTT_client::update_applied_rules(std::map<int,Filter::rule> rules_applied){
+    Json::Value rule_array_client;
+    Json::Value rules;
+    Json::Value rule_array;
+    Json::FastWriter writer;
+    std::string message;
+    for (auto const& [key, val] : rules_applied)
+    {
+        Json::Value indiv_rule;
+        indiv_rule["ruleID"] = key;
+        indiv_rule["src_ip"] = val.src_ip;
+        indiv_rule["dst_ip"] = val.dst_ip;
+        indiv_rule["proto"] = val.proto;
+        indiv_rule["src_port"] = val.src_port;
+        indiv_rule["dst_port"] = val.dst_port;
+        indiv_rule["action"] = val.action;
+
+        std::cout << "rule " << key << " added" << std::endl;
+
+        rule_array.append(indiv_rule);
+    }
+    rules["rules"] = rule_array;
+    rule_array_client["rule_array_client"] = rules;
+
+    message = writer.write(rule_array_client);
+
+    this->client->publish("v1/devices/me/attributes",message);
+}
+
 MQTT_client::~MQTT_client(){
 
     disable_RPC();
